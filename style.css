@@ -47,13 +47,42 @@ html {
   scroll-behavior: smooth;
 }
 /*========== Variables Dark theme ==========*/
+body.dark-theme {
+  --title-color: #f2f2f2;
+  --text-color: #bfbfbf;
 
+  --container-color: #212121;
+  --container-color-alt: #181616;
+  --body-color: #2b2b2b;
+}
 /*========== Button Dark/Light ==========*/
-
+.change-theme {
+  position: absolute;
+  right: 0;
+  top: 2.2rem;
+  display: flex;
+  color: var(--text-color);
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+.change-theme:hover {
+  color: var(--text-color);
+}
 /*========== Font size variables to scale cv ==========*/
 
 /*========== Generate PDF button ==========*/
-
+.generate-pdf {
+  display: none;
+  position: absolute;
+  top: 2.2rem;
+  left: 0;
+  font-size: 1.2rem;
+  color: var(--text-color);
+  cursor: pointer;
+}
+.generate-pdf:hover {
+  color: var(--title-color);
+}
 /*========== Classes modified to reduce size and print on A4 sheet ==========*/
 body {
   margin: 0 0 var(--header-height) 0;
@@ -100,6 +129,7 @@ img {
   letter-spacing: 0.35rem;
   text-align: center;
   margin-bottom: var(--mb-3);
+  padding-top: 0.5rem;
 }
 /*========== LAYOUT ==========*/
 .bd-container {
@@ -142,8 +172,8 @@ img {
     border-radius: 1rem 1rem 0 0;
     z-index: var(--z-fixed);
     transition: 0.3s;
-    backdrop-filter: blur(5px);
-    background: rgba(255, 255, 255, 0.05);
+    /* backdrop-filter: blur(5px);
+    background: rgba(255, 255, 255, 0.05); */
   }
 }
 .nav__logo,
@@ -348,9 +378,9 @@ img {
   padding-bottom: 20px;
   gap: 0.5rem;
 }
-.references__container {
+/* .references__container {
   text-align: center;
-}
+} */
 .references__subtitle {
   color: var(--text-color-light);
 }
@@ -365,20 +395,103 @@ img {
 .interests__container {
   grid-template-columns: 1fr 1fr 1fr;
   margin-top: var(--mb-2);
+  padding-bottom: 1rem;
 }
 .interests__content {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+/* .interests__container:hover {
+  cursor: pointer;
+  color: var(--title-color);
+} */
 .interests__icon {
   font-size: 1.5rem;
   color: var(--text-color-light);
   margin-bottom: 0.25rem;
 }
 /* Scroll top */
-
+.scrollTop {
+  position: fixed;
+  right: 1rem;
+  bottom: -5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.3rem;
+  background-color: var(--container-color-alt);
+  border-radius: 0.4rem;
+  z-index: var(--z-tooltip);
+  transition: 0.5s;
+  visibility: hidden;
+}
+.scroll-top-icon {
+  font-size: 1.2rem;
+  color: var(--text-color);
+}
+.show-scroll {
+  visibility: visible;
+  bottom: 5rem;
+}
 /*========== MEDIA QUERIES ==========*/
+@media screen and (max-width: 320px) {
+  .nav__list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem 0.5rem;
+  }
+}
 /* For small devices, menu two columns */
 
 /* Classes modified for large screen size */
+@media screen and (min-width: 720px) {
+  body {
+    margin: 3rem 0;
+  }
+  .bd-container {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .l-header,
+  .scrollTop {
+    display: none;
+  }
+  .generate-pdf {
+    display: inline-block;
+  }
+  .resume {
+    display: grid;
+    grid-template-columns: 0.5fr 1fr;
+    background-color: var(--container-color);
+    box-shadow: 0 0 8px rgba(13, 12, 12, 0.15);
+  }
+  .resume__left {
+    background-color: var(--container-color-alt);
+  }
+  .resume__right,
+  .resume__left {
+    padding: 0 1.5rem;
+  }
+  .section-title,
+  .profile__description {
+    text-align: initial;
+  }
+  .home__container {
+    gap: 1.5rem;
+  }
+  .home__button-dow {
+    display: none;
+  }
+  /* .references__container {
+    grid-template-columns: repeat;
+  } */
+  .languages__content {
+    grid-template-columns: repeat(3, max-content);
+    column-gap: 3.5rem;
+  }
+  .interests__container {
+    grid-template-columns: repeat(3, max-content);
+    column-gap: 3.5rem;
+    margin-left: 2.5rem;
+  }
+}
