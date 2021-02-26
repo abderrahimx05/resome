@@ -85,3 +85,36 @@ themeButton.addEventListener("click", () => {
   localStorage.setItem("selected-theme", getCurrentTheme());
   localStorage.setItem("selected-icon", getCurrentIcon());
 });
+//reduce the size for A4
+function scaleCv() {
+  document.body.classList.add("scale-cv");
+}
+
+function removeScaleCV() {
+  document.body.classList.remove("scale-cv");
+}
+let areaCv = document.getElementById("area-cv");
+let resumeButton = document.getElementById("resume-button");
+let downloadCv = document.getElementById("download__cv");
+let opt = {
+  margin: 0,
+  filename: "resume.pdf",
+};
+
+function generateResume() {
+  html2pdf(areaCv, opt);
+}
+function generateResume2() {
+  html2pdf(areaCv, opt);
+}
+
+resumeButton.addEventListener("click", () => {
+  scaleCv();
+  generateResume();
+  setTimeout(removeScaleCV, 5000);
+});
+downloadCv.addEventListener("click", () => {
+  scaleCv();
+  generateResume2();
+  // setTimeout(removeScaleCV, 5000);
+});

@@ -86,9 +86,15 @@
                 <h1>Ait-Chraa<b> Abderrahim</b></h1>
                 <h3 class="home__perfection">Web developer</h3>
                 <!-- to download the cv  -->
-                <div>
-                  <a download="" href="" class="home__button-dow"> download </a>
-                </div>
+                <!-- <div>
+                  <a
+                    class="home__button-dow"
+                    title="Generate PDF"
+                    id="download__cv"
+                  >
+                    download
+                  </a>
+                </div> -->
               </div>
               <div class="home__adress bd-grid">
                 <span class="home__information">
@@ -110,13 +116,15 @@
               title="Theme"
               id="theme-button"
             ></i>
+            <!-- Button to generate and download the pdf. Available for desktop. -->
+
+            <i
+              class="bx bx-download generate-pdf"
+              title="Generate PDF"
+              id="resume-button"
+            ></i>
           </section>
-          <!-- Button to generate and download the pdf. Available for desktop. -->
-          <i
-            class="bx bx-cloud-download generate-pdf"
-            title="Generate PDF"
-            id="resume-button"
-          ></i>
+
           <!--========== SOCIAL ==========-->
           <section class="social section">
             <h2 class="section-title">Social</h2>
@@ -126,21 +134,22 @@
                 class="social__link"
                 target="_blank"
               >
-                <i class="bx bxl-linkedin-square"></i>
+                <i class="bx bxl-linkedin-square"></i
+                ><space>__</space> @abderrahim-ait-chraa
               </a>
               <a
                 href="https://www.instagram.com/abderrahimx05/?hl=fr"
                 class="social__link"
                 target="_blank"
               >
-                <i class="bx bxl-instagram"></i>
+                <i class="bx bxl-instagram"></i> <space>__</space>@abderrahimx05
               </a>
               <a
                 href="https://github.com/abderrahimx05"
                 class="social__link"
                 target="_blank"
               >
-                <i class="bx bxl-github"></i>
+                <i class="bx bxl-github"></i><space>__</space> @abderrahimx05
               </a>
             </div>
           </section>
@@ -358,16 +367,16 @@
           <section class="references section" id="references">
             <h2 class="section-title">References</h2>
             <div class="references__container">
-              <div class="references__content bd-grid">
+              <!-- <div class="references__content bd-grid">
                 <span class="references__subtitle">Sr.Director</span>
                 <h3 class="references__title">Mr.Abder</h3>
                 <ul class="references__contact">
                   <li>Phone: 212697823308</li>
                   <li>Email: abderrahim581@hotmail.com</li>
                 </ul>
-              </div>
+              </div> -->
               <div class="references__content bd-grid">
-                <span class="references__subtitle">Mg. Developer</span>
+                <!-- <span class="references__subtitle">Mg. Developer</span> -->
                 <h3 class="references__title">Mr.Angela Yu</h3>
                 <ul class="references__contact">
                   <li>Phone: 212697823308</li>
@@ -383,19 +392,24 @@
             <div class="languages__container">
               <ui class="languages__content bd-grid">
                 <li class="languages__name">
-                  <span class="languages__circle"></span>French
+                  <span class="languages__circle"></span
+                  ><strong>French: </strong>Courante.
                 </li>
                 <li class="languages__name">
-                  <span class="languages__circle"></span>English
+                  <span class="languages__circle"></span
+                  ><strong>English: </strong>Courante.
                 </li>
                 <li class="languages__name">
-                  <span class="languages__circle"></span>Arab
+                  <span class="languages__circle"></span
+                  ><strong>Arab: </strong> Courant.
                 </li>
                 <li class="languages__name">
-                  <span class="languages__circle"></span>Amazigh
+                  <span class="languages__circle"></span
+                  ><strong>Amazigh: </strong>Courante.
                 </li>
                 <li class="languages__name">
-                  <span class="languages__circle"></span>Spanish
+                  <span class="languages__circle"></span
+                  ><strong>Spanish: </strong>basic
                 </li>
               </ui>
             </div>
@@ -444,7 +458,7 @@
       <i class="bx bxs-chevrons-up bx-fade-down scroll-top-icon"></i>
     </a>
     <!--========== HTML2PDF ==========-->
-    <!-- <script src="assets/js/html2pdf.bundle.min.js"></script> -->
+    <script src="./html2pdf.bundle.min.js"></script>
 
     <!--========== MAIN JS ==========-->
     <script src="./app.js"></script>
