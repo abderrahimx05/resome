@@ -95,26 +95,21 @@ function removeScaleCV() {
 }
 let areaCv = document.getElementById("area-cv");
 let resumeButton = document.getElementById("resume-button");
-let downloadCv = document.getElementById("download__cv");
+
 let opt = {
   margin: 0,
   filename: "resume.pdf",
+  image: { type: "jpeg", quality: 0.98 },
+  html2canvas: { scale: 2 },
+  jsPDF: { format: "a4", orientation: "portrait" },
 };
 
 function generateResume() {
-  html2pdf(areaCv, opt);
-}
-function generateResume2() {
   html2pdf(areaCv, opt);
 }
 
 resumeButton.addEventListener("click", () => {
   scaleCv();
   generateResume();
-  setTimeout(removeScaleCV, 5000);
-});
-downloadCv.addEventListener("click", () => {
-  scaleCv();
-  generateResume2();
-  // setTimeout(removeScaleCV, 5000);
+  setTimeout(removeScaleCV, 50000);
 });

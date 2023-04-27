@@ -1,11 +1,22 @@
 {
   "name": "abder",
   "version": "1.0.0",
-  "description": "",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abderrahimx05/resome.git"
+  },
+  "bugs": {
+    "url": "https://github.com/abderrahimx05/resome/issues"
+  },
+  "homepage": "https://github.com/abderrahimx05/resome#readme",
+  "description": "",
+  "dependencies": {
+    "node.js": "^0.0.1-security"
+  }
 }
